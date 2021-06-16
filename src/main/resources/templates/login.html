@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="eu" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<!--/*@thymesVar id="user" type="com.example.tutorial.user.Post"*/-->
+<!--/*@thymesVar id="username" type="com.example.tutorial.user.User"*/-->
+<!--/*@thymesVar id="password" type="com.example.tutorial.user.User"*/-->
+<!--/*@thymesVar id="email" type="com.example.tutorial.user.User"*/-->
+<form method="post" th:action="@{/user/login}" th:object="${user}">
+<div class="main-block">
+
+  <h1>Login</h1>
+    <hr>
+    <!--<div class="account-type">
+      <input type="radio" value="none" id="radioOne" name="account" checked/>
+      <label for="radioOne" class="radio">Student</label>
+      <input type="radio" value="none" id="radioTwo" name="account" />
+      <label for="radioTwo" class="radio">Teacher</label>
+    </div>-->
+    <hr>
+  <label for="username">
+    <i class="fas fa-envelope">
+      <input id="username" type="text" class="form-control" name="username" th:value="username" placeholder="User Name" required/>
+    </i>
+  </label>
+
+  <label for="password">
+    <i class="fas fas fa-user">
+      <input id="password" type="text" class="form-control" name="password" th:value="password" placeholder="Password" required/>
+    </i>
+  </label>
+
+  <label for="email">
+    <i class="fas fa-user">
+      <input id="email" type="text" class="form-control" name="email" th:value="email" placeholder="Email" required/>
+    </i>
+  </label>
+
+
+    <hr>
+    <div class="btn-block">
+      <p>New User? <a href="http://localhost:8080/regi">Register</a>.</p>
+        <button type="submit">Log In</button>
+    </div>
+
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<!--/*@thymesVar id="newUser" type="com.example.tutorial.user.Post"*/-->
+<!--/*@thymesVar id="username" type="com.example.tutorial.user.User"*/-->
+<!--/*@thymesVar id="password" type="com.example.tutorial.user.User"*/-->
+<!--/*@thymesVar id="email" type="com.example.tutorial.user.User"*/-->
+<form method="post" th:action="@{/user/register}" th:object="${newUser}">
+<h2>Klasa</h2>
+<div class="main-block">
+  <h1>Registration</h1>
+  <!--<form action="/UserController.java">-->
+    <hr>
+    <label for="username">
+      <i class="fas fa-envelope">
+        <input id="username" type="text" class="form-control" name="username" th:value="username" placeholder="User Name" required/>
+      </i>
+    </label>
+
+    <label for="password">
+      <i class="fas fa-unlock-alt">
+        <input id="password" type="text" class="form-control" name="password" th:value="password" placeholder="Password" required/>
+      </i>
+    </label>
+
+    <label for="email">
+     <i class="fas fa-user">
+       <input id="email" type="text" class="form-control" name="email" th:value="email" placeholder="Email" required/>
+     </i>
+   </label>
+
+    <hr>
+    <div class="btn-block">
+      <p>By clicking Sign Up, you agree on our <a href="https://www.w3docs.com/privacy-policy">Privacy Policy for Klasa</a>.</p>
+      <p>Already have an account? <a href="http://localhost:8080/login">Sign In</a>.</p>
+    </div>
+    <button type="submit">Sign Up</button>
+  <form action="/login">
+    <button type="submit">Go back</button>
+  </form>
+</div>
+</form>
+</body>
+</html>
